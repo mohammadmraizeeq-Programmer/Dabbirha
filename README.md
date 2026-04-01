@@ -1,7 +1,3 @@
-Here’s a cleaner, more professional, and industry-level version of your README. I removed the citation noise, improved wording, and made it look like something you’d confidently show to companies 👇
-
----
-
 # **Dabbirha (دبّرها) – AI-Powered Home Services Platform**
 
 **Dabbirha** is a full-stack web platform that connects homeowners with trusted service providers through an intelligent, user-friendly system. Developed as a graduation project, the platform integrates Artificial Intelligence to simplify issue diagnosis, service discovery, and booking.
