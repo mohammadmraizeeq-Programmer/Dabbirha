@@ -39,7 +39,7 @@ Here’s a cleaner, more professional, and industry-level version of your README
   PHP (PDO & MySQLi) with a focus on secure database handling and structured architecture
 
 * **Frontend:**
-  Responsive, mobile-first UI built with **Bootstrap**, enhanced using **GSAP (GreenSock)** for smooth animations
+  Responsive, mobile-first UI built with **Bootstrap**, enhanced using **GSAP (GreenSock)**, )**,AOS (Animate On Scroll)**for smooth animations
 
 * **APIs & Integrations:**
 
