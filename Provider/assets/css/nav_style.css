@@ -1,0 +1,29 @@
+    .top-nav {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e2e8f0;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .nav-pill-link {
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        color: #64748b;
+        font-weight: 500;
+        transition: all 0.2s;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+    .nav-pill-link:hover {
+        background: #f1f5f9;
+        color: var(--brand-primary);
+    }
+
+    .nav-pill-link.active {
+        background: var(--brand-primary);
+        color: white;
+    }

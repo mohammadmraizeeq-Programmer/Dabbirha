@@ -1,0 +1,145 @@
+:root {
+    --primary: #008770;
+    --bg-body: #f4f7f6;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-body);
+    overflow-x: hidden;
+}
+
+.console-stage {
+    height: 180vh;
+}
+
+.sticky-viewport {
+    height: calc(100vh - 85px);
+    position: sticky;
+    top: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+}
+
+.flipper-card {
+    width: 85vw;
+    height: 75vh;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    position: relative;
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 40px;
+    background: #fff;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, .07);
+    display: grid;
+    overflow: hidden;
+}
+
+.face-front {
+    grid-template-columns: 1fr 1fr;
+}
+
+.face-back {
+    transform: rotateX(180deg);
+    grid-template-columns: 1fr 1fr;
+}
+
+.card-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.stat-box {
+    background: rgba(0, 135, 112, 0.05);
+    border: 1px solid rgba(0, 135, 112, 0.1);
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.stat-box h4 {
+    margin: 0;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.command-center {
+    background: #fff;
+    padding: 80px 5%;
+    border-radius: 60px 60px 0 0;
+    box-shadow: 0 -30px 60px rgba(0, 0, 0, .03);
+    position: relative;
+    z-index: 10;
+}
+
+.status-line {
+    border-left: 2px dashed var(--primary);
+    padding-left: 30px;
+    margin-left: 10px;
+}
+
+.status-step {
+    margin-bottom: 40px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.status-step::before {
+    content: '';
+    position: absolute;
+    left: -41px;
+    top: 4px;
+    width: 22px;
+    height: 22px;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 2;
+}
+
+.status-step.active-step::before {
+    border-color: var(--primary);
+    background: var(--primary);
+    box-shadow: 0 0 10px rgba(0, 135, 112, 0.4);
+}
+
+.history-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 15px;
+    background: #f9fbfb;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.history-card:hover {
+    background: #fff;
+    border: 1px solid var(--primary);
+}
+
+.badge-status {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 992px) {
+    .face-front, .face-back {
+        grid-template-columns: 1fr;
+    }
+}

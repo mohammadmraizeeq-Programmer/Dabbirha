@@ -1,0 +1,146 @@
+/* ===============================
+   ROOT VARIABLES (Design System)
+================================ */
+:root {
+    /* Brand */
+    --primary: #0d6efd;
+    --secondary: #6c757d;
+    --success: #198754;
+    --info: #0dcaf0;
+    --warning: #ffc107;
+    --dark: #212529;
+    --light: #f8f9fa;
+
+    /* Light backgrounds */
+    --primary-light: #e7f1ff;
+    --secondary-light: #f1f3f5;
+    --table-light-cell: #fafafa;
+
+    /* Borders & table */
+    --border-color: #e5e7eb;
+    --table-header-bg: #f9fafb;
+    --table-hover-bg: #f5f7fa;
+
+    /* Radius & shadow */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    /* Text sizes */
+    --text-smaller: 0.70rem;
+}
+
+/* ===============================
+   BADGES
+================================ */
+.bg-primary-light {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    padding: 6px 10px;
+    font-size: 0.75rem;
+}
+
+.bg-secondary-light {
+    background-color: var(--secondary-light);
+    color: var(--secondary);
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    padding: 6px 10px;
+    font-size: 0.75rem;
+}
+
+/* ===============================
+   TABLE STYLING
+================================ */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table thead th {
+    background-color: var(--table-header-bg);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table td {
+    font-size: 0.9rem;
+    vertical-align: middle;
+    border-top: 1px solid var(--border-color);
+}
+
+.table tbody tr:hover {
+    background-color: var(--table-hover-bg);
+}
+
+/* Light highlighted profit cell */
+.bg-light-cell {
+    background-color: var(--table-light-cell);
+    border-left: 2px solid var(--border-color);
+}
+
+/* ===============================
+   TEXT HELPERS
+================================ */
+.smaller {
+    font-size: var(--text-smaller);
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* Hover effect for Job ID */
+a:hover .fw-bold {
+    text-decoration: underline;
+}
+
+/* ===============================
+   CARDS
+================================ */
+.card {
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ===============================
+   PRINT MODE
+================================ */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        background: #fff !important;
+    }
+
+    .card {
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+    }
+
+    .table thead th {
+        background-color: #eee !important;
+        color: #000 !important;
+    }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .table td,
+    .table th {
+        font-size: 0.8rem;
+    }
+
+    .badge {
+        font-size: 0.7rem;
+    }
+}

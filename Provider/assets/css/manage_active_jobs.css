@@ -1,0 +1,86 @@
+
+        :root {
+            --primary-grad: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+        }
+
+        body {
+            background: #f8fafc;
+            font-family: Inter, sans-serif;
+        }
+
+        .job-card {
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
+            transition: .3s;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .client-info {
+            background: #f1f5f9;
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .description-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .stepper {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .stepper::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #e2e8f0;
+            transform: translateY(-50%);
+        }
+
+        .step {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            color: #94a3b8;
+            z-index: 1;
+        }
+
+        .step.active {
+            background: #6366f1;
+            border-color: #6366f1;
+            color: #fff;
+        }
+        
+        /* New Badge Pulse Animation */
+        .pulse-icon {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #6366f1;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse-animation 2s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0px rgba(99, 102, 241, 0.4); }
+            100% { box-shadow: 0 0 0 10px rgba(99, 102, 241, 0); }
+        }

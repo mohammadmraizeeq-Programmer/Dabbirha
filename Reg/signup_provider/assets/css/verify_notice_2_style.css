@@ -1,0 +1,214 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .verification-card {
+            background: white;
+            border-radius: 20px;
+            padding: 48px;
+            width: 100%;
+            max-width: 520px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .verification-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e293b 0%, #1e293b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: white;
+            font-size: 60px;
+            animation: scaleIn 0.5s ease 0.3s both;
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 16px;
+        }
+
+        .lead {
+            color: #6b7280;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .email-address {
+            background: #f8f9fa;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-weight: 600;
+            color: #495057;
+            word-break: break-all;
+            border: 2px dashed #dee2e6;
+            font-size: 16px;
+        }
+
+        .email-address i {
+            color: #1e293b;
+            margin-right: 10px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 16px 28px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 56px;
+        }
+
+        .btn i {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .btn-dashboard {
+            background: linear-gradient(135deg, #1e293b 0%, #1e293b 100%);
+            color: white;
+            border: none;
+        }
+
+        .btn-dashboard:hover {
+            transform: translateY(-2px);
+            box-shadow: #1e293b;
+            background: linear-gradient(135deg, #1e293b 0%, #1e293b 100%);
+            color: white;
+        }
+
+        .btn-outline-primary {
+            background: white;
+            color: #374151;
+            border: 2px solid #e5e7eb;
+        }
+
+        .btn-outline-primary:hover {
+            background: #f9fafb;
+            border-color: #9ca3af;
+            transform: translateY(-2px);
+            color: #374151;
+        }
+
+        .resend-section {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .resend-btn {
+            background: transparent;
+            color: #1e293b;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .resend-btn:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .resend-btn i {
+            margin-right: 8px;
+        }
+
+        .timer {
+            color: #6b7280;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .timer span {
+            font-weight: 600;
+            color: #ef4444;
+        }
+
+        .alert-info {
+            background: #e8f4fd;
+            border: 1px solid #b6d4fe;
+            color: #1e293b;
+            padding: 16px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .alert-info i {
+            margin-right: 8px;
+        }
+
+        @media (max-width: 576px) {
+            .verification-card {
+                padding: 32px 24px;
+            }
+            
+            .actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            h2 {
+                font-size: 26px;
+            }
+            
+            .lead {
+                font-size: 16px;
+            }
+            
+            .verification-icon {
+                width: 90px;
+                height: 90px;
+                font-size: 45px;
+            }
+        }

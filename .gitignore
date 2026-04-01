@@ -1,0 +1,24 @@
+# --- Dependencies ---
+# No need to upload the massive vendor folder; it's rebuilt via Composer
+/vendor/
+
+# --- Security: Configuration & Credentials ---
+# Protects your database passwords and API keys
+# Based on your structure: User/config/ and main includes/
+User/config/config.php
+includes/config.php
+.env
+*.json
+!composer.json
+
+# --- Uploads & Temporary Files ---
+# Prevents test images or user-uploaded content from going public
+/uploads/
+User/uploads/
+Public/uploads/
+
+# --- OS/IDE Metadata ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

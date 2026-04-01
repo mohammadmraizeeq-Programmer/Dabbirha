@@ -1,0 +1,90 @@
+:root {
+    --primary-color: #008770;
+    --secondary-color: #ff7d3e;
+    --bg-light: #f8fafc;
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Inter', sans-serif;
+    color: #334155;
+}
+
+.card-modern {
+    background: white;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.initial-circle {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #f7efe7 0%, #ff7d3e20 100%);
+    color: var(--secondary-color);
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    box-shadow: 0 8px 15px rgba(255, 125, 62, 0.1);
+}
+
+.rate-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+}
+
+.skill-tag {
+    background: #e0f2f1;
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin: 0.25rem;
+    display: inline-block;
+}
+
+.btn-modern {
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-request {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.btn-request:hover {
+    background-color: #006b58;
+    transform: translateY(-2px);
+    color: white;
+}
+
+.btn-call {
+    background-color: #eff6ff;
+    color: #2563eb;
+    border: 2px solid #dbeafe;
+}
+
+.btn-call:hover {
+    background-color: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.rating-badge {
+    background: #fff9db;
+    color: #fab005;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-weight: 700;
+}

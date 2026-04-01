@@ -1,0 +1,7 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^7.0",
+        "twilio/sdk": "^8.8",
+        "google/cloud-dialogflow": "^2.1"
+    }
+}

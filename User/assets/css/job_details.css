@@ -1,0 +1,111 @@
+:root {
+    --primary: #008770;
+    --primary-light: #00b395;
+    --bg-body: #f4f7f6;
+    --glass: rgba(255, 255, 255, 0.9);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-body);
+    color: #1a1a1a;
+}
+
+h1, h2, h3, .brand-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+}
+
+.mission-header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    color: white;
+    padding: 60px 0;
+    margin-bottom: -50px;
+    border-radius: 0 0 50px 50px;
+}
+
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.status-capsule {
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.price-tag {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    display: block;
+}
+
+.provider-profile-mini {
+    background: #f9fbfb;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid rgba(0, 135, 112, 0.1);
+    transition: 0.3s;
+}
+
+.provider-profile-mini:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.payment-selection-box {
+    background: white;
+    border: 2px solid #eee;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.payment-selection-box:hover {
+    border-color: var(--primary);
+}
+
+.payment-selection-box input:checked + label {
+    color: var(--primary);
+}
+
+.btn-modern {
+    border-radius: 15px;
+    padding: 15px 30px;
+    font-weight: 700;
+    transition: 0.4s;
+}
+
+.btn-primary-modern {
+    background: var(--primary);
+    border: none;
+    color: white;
+}
+
+.btn-primary-modern:hover {
+    background: var(--primary-light);
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 135, 112, 0.2);
+}
+
+.back-btn {
+    color: white;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    opacity: 1;
+    color: white;
+}

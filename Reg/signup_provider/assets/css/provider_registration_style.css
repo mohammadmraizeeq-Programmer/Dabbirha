@@ -1,0 +1,1151 @@
+:root {
+  --primary-color:#1e293b;
+  --primary-dark: #1e293b; 
+  --secondary-color: #2c3e50;
+  --accent-color: #0f172a;
+  --light-bg: #f8f9fa;
+  --border-color: #dee2e6;
+  --success-color: #1e293b;
+  --danger-color: #dc3545;
+  --shadow: 0 5px 15px rgba(0,0,0,0.08);
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.registration-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.registration-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.registration-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.registration-header h1 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+}
+
+.registration-header p {
+  opacity: 0.9;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background: var(--light-bg);
+  position: relative;
+  min-height: 150px;
+}
+
+/* Update the static background line */
+.step-line {
+  position: absolute;
+  top: 50%;
+  left: 10%;  
+  right: 30%; /* Changed from 10% to 30% to stop at Step 4 */
+  height: 3px;
+  background: var(--border-color);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+/* Update the active progress line */
+.step-progress {
+  position: absolute;
+  top: 50%;
+  left: 10%;  
+  right: 30%; /* Match the step-line change */
+  height: 3px;
+  background: var(--primary-color);
+  transform: translateY(-50%);
+  transition: width 0.5s ease;
+  z-index: 1;
+  width: 0%;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  background: var(--light-bg);
+  padding: 0 10px;
+  flex: 1;
+  max-width: 20%;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+
+.step.active .step-number {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  transform: scale(1.1);
+}
+
+.step.completed .step-number {
+  background: var(--success-color);
+  border-color: var(--success-color);
+  color: white;
+}
+
+.step-label {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  font-weight: 500;
+  text-align: center;
+}
+
+.step.active .step-label {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* FORM SECTIONS */
+.form-section {
+  padding: 3rem;
+  display: none;
+}
+
+.form-section.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-title {
+  color: var(--secondary-color);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--light-bg);
+}
+
+/* STEP 5 SPECIFIC STYLES */
+#step5 .form-section {
+  padding: 0 !important;
+}
+
+#step5 .onboarding-body {
+  padding: 3rem;
+}
+
+.success-screen {
+  text-align: center;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.success-icon {
+  font-size: 80px;
+  color: #1e293b;
+  margin-bottom: 25px;
+  animation: scaleIn 0.6s ease-out;
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.success-screen h2 {
+  color: var(--secondary-color);
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 2.2rem;
+}
+
+.success-screen p {
+  color: #6c757d;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Feature List */
+
+/* Step 5: Feature List Layout */
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto 30px auto;
+  text-align: left;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  /* REMOVE BORDERS AND LINES HERE */
+  border: none !important; 
+  border-left: none !important;
+  position: relative;
+  background: transparent; /* Or #f8f9fa if you want a subtle box */
+}
+
+/* Ensure no pseudo-elements are creating vertical lines */
+
+
+.feature-item i {
+  font-size: 1.2rem;
+  margin-right: 15px; /* Space for English */
+  color: var(--primary-color);
+}
+
+/* Arabic (RTL) Fixes */
+[dir="rtl"] .feature-list {
+  text-align: right;
+}
+
+[dir="rtl"] .feature-item i {
+  margin-right: 0;
+  margin-left: 15px; /* Space for Arabic */
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+
+
+.feature-item div {
+  flex: 1;
+}
+
+.feature-item strong {
+  display: block;
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.feature-item .text-muted.small {
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Dashboard Button */
+.success-screen .btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-color));
+  border: none;
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+  min-width: 250px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.success-screen .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #1a2538, #293649);
+  color: white;
+}
+
+.success-screen .btn-primary i {
+  font-size: 1.2rem;
+}
+
+/* END OF STEP 5 STYLES */
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-label.required::after {
+  content: " *";
+  color: var(--danger-color);
+}
+
+.form-control, .form-select {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(30, 41, 59, 0.25);
+  outline: none;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-group-text {
+  background: var(--light-bg);
+  border: 2px solid var(--border-color);
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+}
+
+.input-group .form-control {
+  border-radius: 0 10px 10px 0;
+  border-left: none;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.password-strength-meter {
+  margin-top: 10px;
+}
+
+.strength-bar {
+  height: 5px;
+  border-radius: 3px;
+  transition: var(--transition);
+  width: 0%;
+  max-width: 100%;
+}
+
+.profile-picture-container {
+  text-align: center;
+  margin: 1.2rem 0;
+}
+
+.profile-picture-preview {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: var(--shadow);
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--light-bg);
+}
+
+.profile-picture-preview:hover {
+  transform: scale(1.03);
+  border-color: var(--primary-color);
+}
+
+.profile-upload-label {
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--light-bg);
+  color: var(--secondary-color);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+  border: 2px solid var(--border-color);
+  font-size: 0.85rem;
+}
+
+.profile-upload-label:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.profile-picture-container small.text-muted {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+/* Add a small responsive adjustment */
+@media (max-width: 768px) {
+  .google-signup-container {
+    max-width: 300px;
+    padding: 12px;
+  }
+  
+  .g_id_signin {
+    width: 200px !important;
+  }
+  
+  .profile-picture-preview {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-picture-preview {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Google Signup - Centered with !important */
+.google-signup-container {
+  text-align: center;
+  margin: 1rem 0;
+  padding: 15px;
+  border: 2px dashed var(--border-color);
+  border-radius: 10px;
+  max-width: 400px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.google-signup-container p {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+/* Force Google button to center */
+.g_id_signin {
+  margin: 0 auto !important;
+  width: 220px !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  transform: none !important;
+}
+
+/* Target the specific Google button div */
+div[data-client_id] {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+/* Override any Google CSS */
+iframe[src*="accounts.google.com"] {
+  margin: 0 auto !important;
+}
+
+.text-center.my-4 .text-muted {
+  font-size: 0.85rem;
+}
+
+/* FIXED SERVICE CARDS SECTION */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.service-card {
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+
+.service-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.service-card.selected {
+  border-color: var(--primary-color);
+  background: var(--primary-color);
+  /* Add these lines to fix text visibility */
+  color: white;
+}
+
+.service-card.selected:hover {
+  /* Keep the selected card dark on hover */
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+/* Fix: Change icon color to white when card is selected */
+.service-card.selected .service-icon {
+  color: white;
+}
+
+.service-name {
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+  transition: var(--transition);
+}
+
+/* Fix: Change service name color to white when card is selected */
+.service-card.selected .service-name {
+  color: white;
+}
+
+.service-description {
+  font-size: 0.9rem;
+  color: #6c757d;
+  transition: var(--transition);
+}
+
+/* Fix: Change description color to light gray when card is selected */
+.service-card.selected .service-description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* FIXED SKILL TAGS SECTION */
+#skillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 1rem 0;
+}
+
+.skill-tag {
+  display: inline-block;
+  background: var(--light-bg);
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+  border: 1px solid var(--border-color);
+  color: var(--secondary-color);
+}
+
+.skill-tag:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.skill-tag.selected {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.skill-tag.selected:hover {
+  /* Slightly darker on hover for selected tags */
+  background: #1a2538;
+  border-color: #1a2538;
+}
+
+.map-container {
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1rem 0;
+  border: 2px solid var(--border-color);
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.location-search {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--secondary-color);
+  pointer-events: none;
+}
+
+.verification-notice {
+  background: #e8f4fd;
+  border-left: 4px solid #2196F3;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin: 2rem 0;
+}
+
+.verification-notice h5 {
+  color: #0d47a1;
+  margin-bottom: 0.5rem;
+}
+
+.terms-checkbox {
+  display: flex;
+  align-items: flex-start;
+  margin: 2rem 0;
+}
+
+.terms-checkbox input {
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.terms-label {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
+
+.terms-label a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.terms-label a:hover {
+  text-decoration: underline;
+}
+
+/* UPDATED BUTTON STYLES - All buttons now have same shape */
+.btn-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.btn-prev, .btn-next, .btn-submit, .btn-outline-secondary {
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+  min-width: 150px;
+  border: 2px solid;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn-prev {
+  background: var(--light-bg);
+  color: var(--secondary-color);
+  border-color: var(--border-color);
+}
+
+.btn-prev:hover {
+  background: #e9ecef;
+  border-color: var(--border-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Back to Home Button - Gray version matching Next button shape */
+.btn-outline-secondary {
+  background: var(--light-bg);
+  color: var(--secondary-color);
+  border-color: var(--border-color);
+}
+
+.btn-outline-secondary:hover {
+  background: #e9ecef;
+  border-color: var(--border-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: var(--secondary-color);
+}
+
+.btn-outline-secondary i {
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+.btn-next, .btn-submit {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Find this section around line 640 and update it */
+.btn-next:hover, .btn-submit:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: white !important; /* Ensure text stays white */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 41, 59, 0.2);
+}
+
+.btn-submit:disabled {
+  background: #cccccc;
+  border-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Bootstrap overrides */
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.col-md-6, .col-12 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.is-invalid {
+  border-color: var(--danger-color) !important;
+}
+
+.invalid-feedback {
+  color: var(--danger-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Step 5 specific styles */
+.verified-email-display {
+  background: var(--light-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+}
+
+.verified-email-display i {
+  color: var(--success-color);
+}
+
+.verified-email-display .badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.status-card {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.status-card:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.status-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
+
+.status-icon i {
+  color: white;
+}
+
+.status-content h6 {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.status-content p {
+  font-size: 0.95rem;
+  color: #495057;
+  margin: 0;
+}
+
+.status-content .text-success {
+  color: var(--success-color) !important;
+  font-weight: 600;
+}
+
+/* Ensure Step 5 form controls match others */
+#step5 .form-control,
+#step5 .form-select,
+#step5 .input-group .form-control {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: var(--transition);
+  width: 100%;
+}
+
+#step5 .form-control:focus,
+#step5 .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(30, 41, 59, 0.25);
+  outline: none;
+}
+
+#step5 .input-group-text {
+  background: var(--light-bg);
+  border: 2px solid var(--border-color);
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+}
+
+#step5 .input-group .form-control {
+  border-radius: 0 10px 10px 0;
+  border-left: none;
+}
+
+/* Review Summary Styles */
+.review-summary {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.review-summary h5 {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.review-card {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 15px;
+  height: 100%;
+}
+
+.review-card h6 {
+  color: var(--primary-color);
+  font-weight: 600;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.review-content p {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.review-content strong {
+  color: var(--secondary-color);
+  min-width: 120px;
+  display: inline-block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .registration-header {
+    padding: 1.5rem;
+  }
+  
+  .registration-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .form-section {
+    padding: 1.5rem;
+  }
+  
+  #step5 .onboarding-body {
+    padding: 1.5rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .btn-navigation {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .btn-prev, .btn-next, .btn-submit, .btn-outline-secondary {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .step-indicator {
+    padding: 1rem;
+    min-height: 120px;
+  }
+  
+  .step-number {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+  
+  .step-label {
+    font-size: 0.75rem;
+    margin-top: 5px;
+  }
+  
+  .step {
+    padding: 0 5px;
+  }
+  
+  .status-card {
+    margin-bottom: 15px;
+  }
+  
+  #step5 .row > div {
+    margin-bottom: 1rem;
+  }
+  
+  .verified-email-display {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .verified-email-display .badge {
+    align-self: flex-start;
+  }
+  
+  /* Step 5 Responsive */
+  .success-screen {
+    padding: 30px 15px;
+  }
+  
+  .success-icon {
+    font-size: 60px;
+  }
+  
+  .success-screen h2 {
+    font-size: 1.8rem;
+  }
+  
+  .success-screen p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .feature-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .feature-item {
+    padding: 15px;
+  }
+  
+  .feature-item i {
+    font-size: 24px;
+    margin-right: 12px;
+  }
+  
+  .success-screen .btn-primary {
+    padding: 12px 30px;
+    font-size: 1rem;
+    min-width: 200px;
+  }
+  
+  .review-content p {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .review-content strong {
+    margin-bottom: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .registration-container {
+    padding: 10px;
+  }
+  
+  .step-indicator {
+    min-height: 100px;
+  }
+  
+  .step-number {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+  
+  .step-label {
+    font-size: 0.65rem;
+  }
+  
+  .form-title {
+    font-size: 1.25rem;
+  }
+  
+  /* Step 5 Responsive */
+  .success-screen {
+    padding: 20px 10px;
+  }
+  
+  .success-icon {
+    font-size: 50px;
+  }
+  
+  .success-screen h2 {
+    font-size: 1.6rem;
+  }
+  
+  .success-screen .btn-primary {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+[dir="rtl"] .password-toggle {
+  right: auto;   /* Remove the right-side alignment */
+  left: 15px;    /* Move it to the left side */
+}
+/* Padding for LTR (English) */
+.form-control-password {
+  padding-right: 40px; 
+}
+
+/* Padding for RTL (Arabic) */
+[dir="rtl"] .form-control-password {
+  padding-right: 12px; /* Reset original padding */
+  padding-left: 40px;  /* Add space for the icon on the left */
+}
+
+/* Fix for Select Dropdown Arrow in RTL (Arabic) */
+[dir="rtl"] .form-select {
+  /* Move the arrow icon to the left side */
+  background-position: left 0.75rem center !important;
+  
+  /* Swap padding: 
+     In Arabic, text should have space on the LEFT for the arrow 
+     and normal padding on the RIGHT */
+  padding-left: 2.25rem !important; 
+  padding-right: 0.75rem !important;
+}
+
+/* Reset for LTR (English) if necessary, though default Bootstrap handles this */
+[dir="ltr"] .form-select {
+  background-position: right 0.75rem center;
+  padding-right: 2.25rem;
+  padding-left: 0.75rem;
+}
+
+/* Flip the icon direction globally for RTL */
+[dir="rtl"] .fa-arrow-left, 
+[dir="rtl"] .fa-arrow-right {
+    transform: rotate(180deg);
+    display: inline-block; /* Required for transform to work on some elements */
+}
+
+/* Fix spacing for the 'Back to Home' button in Arabic */
+[dir="rtl"] .btn-prev i.ms-2 {
+    margin-left: 0 !important;
+    margin-right: 8px !important;
+}
+
+/* Fix spacing for the 'Next' button in Arabic */
+[dir="rtl"] .btn-next i.me-2 {
+    margin-right: 0 !important;
+    margin-left: 8px !important;
+}

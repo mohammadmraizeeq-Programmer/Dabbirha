@@ -1,0 +1,63 @@
+/* --- EXISTING STYLES --- */
+.glass-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 85px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, .8);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.brand-text {
+    font-family: 'Space Grotesk';
+    color: #000 !important;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.profile-trigger {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid var(--primary);
+}
+
+/* --- GLASS DROPDOWN MODIFICATION --- */
+.dropdown-menu {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8); /* Translucent background */
+    backdrop-filter: blur(12px);         /* Glass blur effect */
+}
+
+.dropdown-item {
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+/* --- LOGOUT BUTTON STATES --- */
+
+/* 1. HOVER (When mouse is over it) */
+.dropdown-item.text-danger:hover {
+    background-color: rgba(220, 53, 69, 0.1); 
+    color: #dc3545 !important;
+}
+
+/* 2. ACTIVE (EXACTLY WHERE YOU CHANGE THE PRESS COLOR) */
+.dropdown-item.text-danger:active {
+    /* CHANGE THIS HEX CODE TO CHANGE THE PRESS COLOR */
+    background-color: #c4c4c4 !important; 
+    
+    color: #ffffff !important;
+    transform: scale(0.97); /* Adds a "pressed down" feel */
+}

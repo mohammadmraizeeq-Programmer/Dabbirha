@@ -1,0 +1,216 @@
+:root {
+            --primary-color: #007bff;
+            /* Royal Blue */
+            --secondary-color: #212529;
+            /* Dark Gray/Black */
+            --background-color: #f8f9fa;
+            /* Very Light Gray */
+            --step-indicator-bg: #e9ecef;
+            /* Light Gray for Step Icon */
+            --font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            font-family: var(--font-family);
+            color: var(--secondary-color);
+        }
+
+        /* --- Header & Card Styling --- */
+.hero-modern {
+    /* Updated to a soft blue/white gradient to feel more "Intelligent/AI" */
+    background: var(--background-color);
+    padding: 120px 0 60px 0; /* Keeps space for the fixed nav */
+    color: var(--secondary-color); /* Change text to dark for readability on light bg */
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.hero-modern h1 {
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #212529;
+}
+
+.hero-modern p {
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+        .modern-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            /* Softer, modern shadow */
+            padding: 40px;
+            position: relative;
+            /* Required for layout context */
+        }
+
+        /* --- Step Indicators (Sidebar) --- */
+        .step-indicators {
+            list-style: none;
+            padding: 0;
+            position: sticky;
+            top: 100px;
+            z-index: 10;
+        }
+
+        .step-indicators li {
+            padding: 10px 0 10px 15px;
+            border-left: 2px solid #ced4da;
+            margin-bottom: 30px;
+            position: relative;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .step-indicators li.active {
+            border-left-color: var(--primary-color);
+            opacity: 1;
+            font-weight: 600;
+        }
+
+        .step-indicators li .icon {
+            position: absolute;
+            /* UPDATED: Increased size and prominent background */
+            left: -12px;
+            top: 6px;
+            background: var(--step-indicator-bg);
+            border: 2px solid #ced4da;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .step-indicators li.active .icon {
+            /* UPDATED: More prominent active state */
+            width: 28px;
+            height: 28px;
+            left: -14px;
+            top: 4px;
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 0 0 6px rgba(0, 123, 255, 0.35);
+        }
+
+        .step-indicators li h6 {
+            color: var(--secondary-color);
+        }
+
+        /* --- Upload Zone --- */
+        .upload-zone {
+            text-align: center;
+            border: 3px dashed var(--primary-color);
+            min-height: 250px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background-color: #f0f8ff;
+            /* ADDED: Flexbox for centering content */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .upload-zone:hover,
+        .upload-zone.drag-over {
+            background-color: #e6f3ff;
+            border-color: #0056b3; /* Darker primary on hover */
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.2);
+        }
+
+        /* --- Step Container and Transitions (Crucial Refactor) --- */
+        .form-steps-container {
+            position: relative;
+            /* Key: Create a height-defining context for children */
+            min-height: 550px;
+            /* Example height, adjust as needed */
+            overflow: hidden;
+            /* Ensures absolute children don't overflow */
+        }
+
+        .form-step {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            position: absolute;
+            /* Key: Absolute position allows overlapping for smooth transition */
+            top: 0;
+            left: 0;
+            width: 100%;
+            /* Ensure the absolute step takes full width of the container */
+        }
+
+        .form-step.hidden {
+            opacity: 0;
+            transform: translateX(30px);
+            pointer-events: none;
+            /* Disable interaction when hidden */
+        }
+
+        .form-step.visible {
+            opacity: 1;
+            transform: translateX(0);
+            position: static;
+            /* Key: Static position allows the element to define the container's height */
+            pointer-events: auto;
+        }
+
+        .ai-result {
+            background-color: #e6f3ff;
+            border-left: 5px solid var(--primary-color);
+            /* ADDED: Transition for smoother state changes */
+            transition: all 0.3s ease;
+        }
+        
+        /* ADDED: Class for Analysis In Progress */
+        .ai-result.ai-analyzing {
+            background-color: #fff3cd; /* Bootstrap warning-light color */
+            border-left: 5px solid #ffc107; /* Bootstrap warning color */
+        }
+        
+        /* Added class for error state styling */
+        .ai-result.ai-error {
+            border-left: 5px solid #dc3545; /* Bootstrap danger color */
+            background-color: #f8d7da; /* Bootstrap danger-light color */
+        }
+
+        /* Responsive adjustments for two columns */
+        @media (max-width: 992px) {
+            .step-indicators {
+                position: static;
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #dee2e6;
+                padding-bottom: 15px;
+                align-items: center; /* Center steps vertically */
+            }
+
+            .step-indicators li {
+                border-left: none;
+                margin-bottom: 0;
+                padding: 0 10px;
+                text-align: center;
+                flex-grow: 1;
+            }
+
+            .step-indicators li .icon {
+                position: static;
+                margin: 0 auto 5px;
+            }
+
+            .step-indicators li h6,
+            .step-indicators li p {
+                display: none;
+                /* Hide text steps on small screens, only show icons */
+            }
+
+            .modern-card {
+                padding: 20px;
+            }
+        }

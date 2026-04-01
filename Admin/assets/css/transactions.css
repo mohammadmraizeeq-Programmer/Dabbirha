@@ -1,0 +1,138 @@
+/* ===============================
+   ROOT VARIABLES (Design System)
+================================ */
+:root {
+    /* Brand colors */
+    --primary: #0d6efd;
+    --secondary: #6c757d;
+    --success: #198754;
+    --info: #0dcaf0;
+    --light: #f8f9fa;
+    --dark: #212529;
+
+    /* Custom light backgrounds */
+    --primary-light: #e7f1ff;
+    --secondary-light: #f1f3f5;
+    --success-light: #e9f7ef;
+    --info-light: #e6f9fc;
+
+    /* Table styling */
+    --table-header-bg: #f9fafb;
+    --table-row-hover: #f5f7fa;
+    --table-border-color: #e5e7eb;
+
+    /* Radius & shadow */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ===============================
+   GENERAL TABLE STYLING
+================================ */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table thead th {
+    background-color: var(--table-header-bg);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--secondary);
+    border-bottom: 1px solid var(--table-border-color);
+}
+
+.table tbody tr {
+    transition: background-color 0.2s ease-in-out;
+}
+
+.table tbody tr:hover {
+    background-color: var(--table-row-hover);
+}
+
+.table td {
+    vertical-align: middle;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--table-border-color);
+}
+
+/* ===============================
+   BADGES (Payment Method)
+================================ */
+.bg-primary-light {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 6px 10px;
+}
+
+.bg-secondary-light {
+    background-color: var(--secondary-light);
+    color: var(--secondary);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 6px 10px;
+}
+
+/* ===============================
+   FINANCIAL VALUES
+================================ */
+.text-success {
+    color: var(--success) !important;
+}
+
+.text-info {
+    color: var(--info) !important;
+}
+
+.badge.bg-light {
+    background-color: #ffffff !important;
+    border: 1px solid var(--table-border-color);
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+}
+
+/* ===============================
+   CARD IMPROVEMENTS
+================================ */
+.card {
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ===============================
+   JOB TITLE TRUNCATION
+================================ */
+.text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===============================
+   DROPDOWN BUTTON
+================================ */
+.dropdown .btn {
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+}
+
+/* ===============================
+   RESPONSIVE TWEAKS
+================================ */
+@media (max-width: 768px) {
+    .table td,
+    .table th {
+        font-size: 0.8rem;
+    }
+
+    .badge {
+        font-size: 0.7rem;
+    }
+}

@@ -1,0 +1,146 @@
+:root {
+    --primary-color: #008770; /* Dabbirha Green */
+    --accent-color: #ff7d3e;  /* Orange Accent */
+    --bg-light: #ffffff;
+    --sidebar-width: 400px;
+}
+
+/* 1. Full Screen Layout */
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+#app-container {
+    display: flex;
+    height: calc(100vh - 71px); /* Deduct navbar height */
+}
+
+/* 2. Sidebar (List & Filters) */
+#sidebar {
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-light);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+#provider-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 0 20px 20px 20px;
+}
+
+/* 3. Map Container */
+#map-container {
+    flex-grow: 1;
+    height: 100%;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+/* 4. Search and Filters */
+.search-filters {
+    padding: 15px 20px 5px 20px;
+    background-color: var(--bg-light);
+    border-bottom: 1px solid #eee;
+}
+
+.search-filters .form-control,
+.search-filters .form-select {
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
+/* 5. Provider Card Styling */
+.provider-card-v4 {
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f1f1;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    color: #333;
+}
+
+.provider-card-v4:hover {
+    background-color: #f7f7f7;
+}
+
+.card-image-v4 {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.card-details-v4 h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+    color: var(--primary-color);
+}
+
+.card-details-v4 p {
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+/* Info Window Styling */
+.info-window-content .btn {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.info-window-content {
+    padding: 3px 10px 5px 5px;
+    display: flex;
+    align-items: center;
+    min-width: 200px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    #app-container {
+        flex-direction: column;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    #sidebar {
+        width: 100%;
+        height: auto;
+        min-height: 450px;
+        order: 2;
+    }
+
+    #map-container {
+        height: 400px;
+        order: 1;
+    }
+
+    body, html {
+        overflow-y: auto;
+    }
+}

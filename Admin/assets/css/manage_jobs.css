@@ -1,0 +1,173 @@
+:root {
+    /* Primary Brand Colors */
+    --primary-color: #4f46e5;
+    --primary-light: #eef2ff;
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --border-color: #edf2f7;
+    --text-dark: #1a202c;
+    --text-muted: #64748b;
+
+    /* Status Colors */
+    --status-open-bg: #e0f2fe;
+    --status-open-text: #0369a1;
+    --status-progress-bg: #fef3c7;
+    --status-progress-text: #92400e;
+    --status-closed-bg: #dcfce7;
+    --status-closed-text: #166534;
+    --status-error-bg: #fee2e2;
+    --status-error-text: #991b1b;
+    --status-assigned-bg: #f3e8ff;
+    --status-assigned-text: #7e22ce;
+
+    /* Spacing & Shadows */
+    --radius-lg: 12px;
+    --radius-md: 10px;
+    --shadow-sm: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Job Management Modern Styles */
+.jobs-container {
+    background: var(--bg-main);
+    min-height: 100vh;
+}
+
+/* Base row styling with anti-cracking logic */
+.job-card-row {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    /* Forces desktop to stay in one line */
+    overflow: hidden;
+}
+
+.job-card-row:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+    border-color: #cbd5e0;
+}
+
+/* Column Width Control to prevent shifting */
+.job-info-col {
+    max-width: 40%;
+    flex: 0 0 40%;
+    padding-right: 20px;
+}
+
+.col-client {
+    flex: 0 0 20%;
+    min-width: 150px;
+}
+
+.col-financials {
+    flex: 0 0 15%;
+    min-width: 120px;
+}
+
+.col-status {
+    flex: 0 0 15%;
+    min-width: 120px;
+}
+
+/* Title Truncation Logic */
+.job-title-text {
+    display: block;
+    white-space: nowrap;
+    font-size: 1rem;
+    color: var(--text-dark);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* This adds the "..." */
+    max-width: 100%;
+}
+
+.truncate-email {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+/* UI Elements */
+.service-icon-box {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    /* Prevents icon from shrinking */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    background: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.status-pill {
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+/* Status Color Variations using variables */
+.status-open {
+    background: var(--status-open-bg);
+    color: var(--status-open-text);
+}
+
+.status-in-progress {
+    background: var(--status-progress-bg);
+    color: var(--status-progress-text);
+}
+
+.status-closed {
+    background: var(--status-closed-bg);
+    color: var(--status-closed-text);
+}
+
+.status-cancelled {
+    background: var(--status-error-bg);
+    color: var(--status-error-text);
+}
+
+.status-assigned {
+    background: var(--status-assigned-bg);
+    color: var(--status-assigned-text);
+}
+
+.price-tag {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* Responsive Handling: Stack rows on mobile */
+@media (max-width: 992px) {
+    .job-card-row {
+        flex-wrap: wrap;
+        padding: 20px !important;
+    }
+
+    .job-info-col {
+        max-width: 100%;
+        flex: 0 0 100%;
+        margin-bottom: 15px;
+        padding-right: 0;
+    }
+
+    .col-client,
+    .col-financials,
+    .col-status {
+        flex: 0 0 33.33%;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,209 @@
+:root {
+    --primary-color: #6c757d;
+    --primary-hover: rgb(94, 101, 106);
+    --text-color: #212529;
+    --text-light: #6c757d;
+    --background: #ffffff;
+    --background-light: #f8f9fa;
+
+}
+
+
+body {
+    /* Bootstrap handles most of this, but keeping font-family for consistency */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text-color);
+}
+
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] .navbar-nav {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+
+/* --- Custom Navigation Styles --- */
+.header {
+    /* REMOVED fixed positioning */
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    /* Make the navbar background transparent */
+    background-color: transparent;
+    z-index: 10;
+    transition: all 0.3s ease;
+
+}
+
+/* Ensure navbar items use white text on the dark background */
+.header .nav-link,
+.header .navbar-brand {
+    color: #fff !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Toggle button needs color for visibility */
+.header .navbar-toggler i {
+    color: #fff;
+}
+
+
+/* Custom Hover Dropdown Behavior (Desktop only) */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-item.dropdown:hover .nav-link::after {
+    transform: rotate(180deg);
+}
+
+
+.dropdown-menu {
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Initial states for custom animation */
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    transform: translateY(10px);
+    color: var(--text-color);
+    /* Ensure dropdown menu text is dark */
+}
+
+.dropdown-header {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.25rem;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item i {
+    margin-right: 0.75rem;
+}
+
+.dropdown-item:hover {
+    background-color: var(--background-light);
+    color: var(--primary-color) !important;
+    border-radius: 5px;
+}
+
+.nav-item {
+    margin-right: 10px;
+    /* adjust the value as needed */
+}
+
+
+/* Adjusted Sign-in button for contrast */
+.sign-in-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    border-radius: var(--border-radius);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.sign-in-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.sign-in-btn:active {
+    transform: translateY(0);
+}
+
+.sign-in-arrow {
+    margin-left: 0.5rem;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.sign-in-btn:hover .sign-in-arrow {
+    transform: translateX(3px);
+}
+
+
+/* --- Hero Background & Overlay (Covers Header) --- */
+.bg-hero-wrapper {
+    background: linear-gradient(rgba(9, 9, 9, 0.3),
+            rgba(9, 9, 9, 0.3)), url("https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center 45% /cover no-repeat fixed;
+    position: relative;
+    min-height: 100vh;
+
+
+}
+
+/* Overlay for better text readability */
+.bg-hero-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    /* Below the header and content */
+}
+
+/* Z-index for content inside the hero wrapper */
+.bg-hero-wrapper .container {
+    position: relative;
+    z-index: 2;
+    /* Content sits above the overlay */
+}
+
+.bg-hero-wrapper .hero-text {
+    padding-top: 3rem;
+    /* Add some space at the top of the content below the navbar */
+}
+
+.lang-option {
+color: #6c757d;
+background: transparent;
+}
+.lang-option.active {
+color: #0d6efd;
+background: white;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.lang-option:hover:not(.active) {
+color: #495057;
+background: rgba(0,0,0,0.05);
+}

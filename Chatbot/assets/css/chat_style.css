@@ -1,0 +1,87 @@
+df-messenger {
+    /* ======================================================
+       POSITIONING & VISIBILITY
+       ====================================================== */
+
+    /* Fixes the chatbot to the bottom-right corner of the page */
+    position: fixed;
+
+    /* Distance from the bottom of the screen */
+    bottom: 25px;
+
+    /* Distance from the right side of the screen */
+    right: 25px;
+
+    /* Ensures the chatbot stays above all other elements */
+    z-index: 9999;
+
+    /* Forces the widget to render even if parent styles hide it */
+    display: block !important;
+    /* 
+       Color of the launcher ICON (chat bubble avatar)
+       – This affects the icon you see BEFORE opening the chatbot
+       – Usually the chat logo or avatar inside the floating circle
+    */
+    --df-messenger-launcher-fill-color: #2e3a59; /* arctic-slate */
+
+
+    /* ------------------------------------------------------
+       HEADER / TITLE BAR (AFTER OPENING)
+       ------------------------------------------------------ */
+
+    /*
+       Background color of the top bar inside the opened chat window
+       – This is the header that shows the chatbot name/title
+    */
+    --df-messenger-button-titlebar-color: #474f6a;
+
+
+    /* ------------------------------------------------------
+       USER MESSAGES (YOUR MESSAGES)
+       ------------------------------------------------------ */
+
+    /*
+       Background color of messages sent by the USER
+       – These are the bubbles aligned to the right
+       – Does NOT affect text color, only the bubble background
+    */
+    --df-messenger-user-message: #ebebeb;
+
+
+    /* ------------------------------------------------------
+       BOT MESSAGES (CHATBOT RESPONSES)
+       ------------------------------------------------------ */
+
+    /*
+       Background color of messages sent by the BOT
+       – These are the bubbles aligned to the left
+       – Used for replies, cards, quick replies, etc.
+    */
+    --df-messenger-bot-message: #f1f5f9;
+
+
+    /* ------------------------------------------------------
+       GLOBAL TEXT COLOR
+       ------------------------------------------------------ */
+
+    /*
+       Default text color inside the chatbot
+       – Affects bot text, user text, placeholders, and labels
+       – Does NOT affect links or icons unless inherited
+    */
+    --df-messenger-font-color: #2e3a59;
+}
+
+
+/* ======================================================
+   CHAT WINDOW CONTAINER
+   ====================================================== */
+
+df-messenger-chat-window {
+    /*
+       Rounds the corners of the entire chat window
+       – Applies ONLY when the chatbot is open
+       – Gives a modern card-style appearance
+    */
+    border-radius: 15px !important;
+}

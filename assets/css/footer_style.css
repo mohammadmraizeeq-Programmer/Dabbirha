@@ -1,0 +1,78 @@
+.footer-bento {
+    background: #fdfdfd;
+    padding: 80px 0 40px;
+}
+
+.bento-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 24px;
+    padding: 2rem;
+    height: 100%;
+    transition: 0.4s;
+}
+
+.bento-card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.bento-primary {
+    background: #0f172a;
+    color: #fff;
+}
+
+.footer-big-text {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.service-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 50px;
+    background: #f1f5f9;
+    color: #475569;
+    margin: 4px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.service-tag:hover {
+    background: #3b82f6;
+    color: #fff;
+}
+
+.btn-instagram {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-color: #cc2366;
+    color: transparent;
+    /* important for gradient icon */
+}
+
+.btn-instagram i {
+    font-size: 1.2rem;
+    background: linear-gradient(45deg,
+            #f09433,
+            #e6683c,
+            #dc2743,
+            #cc2366,
+            #bc1888);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-instagram:hover {
+    background-color: #fff;          /* stays white */
+    border-color: #e1306c;            /* stronger Insta pink */
+}
+
+.btn-instagram:hover i {
+    filter: brightness(1.15);         /* subtle pop like WhatsApp */
+}
