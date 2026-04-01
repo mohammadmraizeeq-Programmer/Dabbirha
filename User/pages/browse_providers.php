@@ -126,7 +126,7 @@ $provider_json = json_encode($providers);
     </script>
 
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAGpwXPsdqJhaPfFxPapoMJ9W7ckh8SjQ&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR KEY PASSWORD&callback=initMap">
     </script>
 
     <script src="../assets/js/browse_providers.js"></script>
